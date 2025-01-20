@@ -23,7 +23,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book update(Long id, BookDto dto) {
-        if (repository.findById(id).isPresent()) {
+        if (repository.findById(id).isEmpty()) {
             throw new RuntimeException("Book is not exist");
         } else {
             return repository.updateBook(id, dto);

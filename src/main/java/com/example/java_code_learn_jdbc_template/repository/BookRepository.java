@@ -57,7 +57,7 @@ public class BookRepository {
         if (findById(id).isEmpty()) {
             throw new RuntimeException("Book is not exist");
         } else {
-            String sql = "DElETE FROM book * WHERE id = ?";
+            String sql = "DElETE FROM book WHERE id = ?";
             jdbcTemplate.update(sql, id);
         }
     }
